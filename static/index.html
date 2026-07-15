@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ava Lougheed Shoes — Presale</title>
+<meta name="description" content="A limited drop of 300 pairs. Reserve yours with a fully refundable $25 deposit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img src="/assets/logo.png" alt="Ava Lougheed" class="nav-logo">
+  <div class="nav-links">
+    <a href="#story">Story</a>
+    <a href="#designer">Designer</a>
+    <a href="#reserve">Reserve</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow eyebrow-green">Presale · Launching soon!</div>
+      <h1>I built this shoe for wandering off the path.</h1>
+      <p class="hero-copy">Hi, I'm Ava. This is my design and it represents more than a year of sketching in the studio and testing prototypes on the streets of Milan and Vancouver, distilled into one pair. I'm doing a exclusive limited (300 pairs) drop and I'd love for you to be among the first to own it.&nbsp;</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-open-deposit>Reserve yours — $25 deposit</button>
+        <button class="btn btn-ghost" data-scroll-email>Join the list</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/assets/hero.jpg" alt="Ava Lougheed shoe, worn on cobblestones">
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOSHOOT -->
+<section id="story" class="shoot">
+  <div class="shoot-intro">
+    <div class="eyebrow eyebrow-green">The Photoshoot</div>
+    <h2>Three places I imagined you wearing them.</h2>
+    <p>When I design, I picture the life a shoe will actually live and these felt right on a staircase in Positano, a lantern-lit alley in Kyoto, or a festival lawn at golden hour.</p>
+  </div>
+  <div class="shoot-grid">
+    <figure class="shot">
+      <img src="/assets/shot-positano.jpg" alt="Positano, Italy">
+      <figcaption>Positano, Italy</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="/assets/shot-kyoto.jpg" alt="Kyoto, Japan">
+      <figcaption>Kyoto, Japan</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="/assets/shot-coachella.jpg" alt="Coachella">
+      <figcaption>Coachella</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CRAFTSMANSHIP -->
+<section class="craft">
+  <div class="craft-grid">
+    <div class="craft-image">
+      <img src="/assets/craft.jpg" alt="Festival-goer wearing Ava Lougheed shoes, with a close-up of the rainbow detail">
+    </div>
+    <div>
+      <div class="eyebrow eyebrow-rust">Materials &amp; Craft</div>
+      <h2>Nothing about this was rushed and I mean that literally.</h2>
+      <p>I chose lamb hide for the inside and cow for the outside because it's how the ateliers I trained in still do it. I cut the upper myself for the first samples, stitched the rainbow on rather than glued it, and kept sending the sole back until it would soften with wear instead of just wearing out.</p>
+      <p>I'm only making a small batch so I found a family owned small generational factory that would take the same care as I did. I want it to last you a decade of walks on the streets of London, Paris, Rome, NYC, LA, Vancouver or wherever your heart takes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNER -->
+<section id="designer" class="designer">
+  <div class="designer-grid">
+    <div class="designer-photo">
+      <img src="/assets/designer.jpg" alt="Ava Lougheed, shoe designer">
+    </div>
+    <div>
+      <div class="eyebrow eyebrow-green">The Designer</div>
+      <h2 class="designer-name">Ava Lougheed</h2>
+      <div class="designer-title">Shoe Designer — trained at the Arsutoria School, Milan, Italy</div>
+      <p>I learned to build a shoe from the sole up at Milan's Arsutoria School, hunched over the same lasting benches designers have used for generations. I learned pattern-cutting by hand. It rewired how I see a shoe where every curve has to earn its place.</p>
+      <p>But most of my best ideas didn't come from the studio. They came from the walks I took to clear my head afterward. I would sketch soles on the side of the Duomo , deciding a shoe wasn't done until I trusted it on those cobble stone paths, not just a runway.</p>
+      <p>This is that shoe. The first one I will release. I hope it goes as many places for you as it has for me.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section id="reserve" class="reserve">
+  <div class="reserve-inner">
+    <div class="eyebrow eyebrow-warm">Presale</div>
+    <h2>Be among the first to wear it.</h2>
+    <p class="reserve-copy">We envision the retail price will be about $75 USD. Reserve now with a fully refundable $25 deposit and guarantee a pair or just join the list to hear when it launches.</p>
+
+    <div class="reserve-cards" id="email-anchor">
+
+      <!-- Email capture card -->
+      <div class="reserve-card">
+        <div class="card-title">Join the list</div>
+        <p class="card-sub">No spam — just launch updates and a first look at the campaign photos.</p>
+        <form id="email-form" class="email-row" novalidate>
+          <input id="email-input" type="email" placeholder="you@email.com" autocomplete="email" required>
+          <button type="submit" class="btn-join">Join</button>
+        </form>
+        <div id="email-success" class="email-success" hidden></div>
+        <div id="email-error" class="email-error" hidden></div>
+      </div>
+
+      <!-- Deposit card -->
+      <div class="reserve-card">
+        <div class="card-title">Reserve early access</div>
+        <div class="price-row">
+          <span class="price">$25</span>
+          <span class="price-note">refundable deposit · $75 retail</span>
+        </div>
+        <button class="btn-reserve" data-open-deposit>Reserve yours — $25</button>
+        <p class="fine-print">Fully refundable any time before shipping. Charged now, applied to your final $75 at launch.</p>
+      </div>
+
+    </div>
+
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Pinterest">PIN</a>
+      <a href="#" aria-label="TikTok">TT</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 Ava Lougheed Shoes. Made in Milan.</footer>
+
+<!-- DEPOSIT MODAL -->
+<div class="modal-overlay" id="deposit-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" data-close-deposit aria-label="Close">✕</button>
+
+    <div id="deposit-form-view">
+      <div class="modal-title" id="modal-title">Reserve your pair</div>
+      <p class="modal-sub">$25 refundable deposit · applied to your $75 at launch this fall.</p>
+      <div class="modal-fields">
+        <input id="deposit-name" placeholder="Full name" autocomplete="name">
+        <input id="deposit-email" placeholder="Email" type="email" autocomplete="email">
+        <button id="pay-button" class="btn-pay" disabled>Continue to secure payment</button>
+        <p class="modal-fine">You'll enter card details on Stripe's secure checkout page.</p>
+      </div>
+      <div id="deposit-error" class="email-error" hidden></div>
+    </div>
+
+    <div id="deposit-success-view" hidden>
+      <div class="modal-success">
+        <div class="modal-leaf">🌿</div>
+        <div class="modal-title">You're reserved.</div>
+        <p id="deposit-success-copy">Thank you — your $25 deposit is confirmed. We'll email you this fall when it's time to complete your order.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
