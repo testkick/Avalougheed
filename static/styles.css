@@ -79,6 +79,10 @@ h1, h2 {
   color: var(--ink-soft);
   max-width: 460px; margin: 0 0 36px;
 }
+.hero-tagline {
+  font-weight: 700;
+  margin-bottom: 24px; /* space before the buttons */
+}
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .btn {
