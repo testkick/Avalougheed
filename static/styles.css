@@ -9,17 +9,17 @@
   --ink-soft: oklch(35% 0.02 85);
   --rust: var(--rose);               /* global accent now follows the rose */
   --rust-dark: var(--rose-dark);
-  --green: hsl(89, 35%, 30%);        /* eyebrow green re-tuned to the olive hue */
+  --green: hsl(269, 35%, 42%);       /* eyebrow accent — violet to match the scheme */
   --sunshine: oklch(80% 0.15 85);    /* warm yellow accent (dark sections) */
   --border: oklch(85% 0.02 85);
   --cream: oklch(98% 0.01 85);
   --rose: hsl(348, 52%, 47%);        /* primary accent — dusty rose */
   --rose-dark: hsl(348, 52%, 38%);
-  --blush: hsl(348, 60%, 86%);       /* nav bar pink — warm blush that sits well with olive */
-  --blush-soft: hsl(348, 55%, 84%);  /* pink accents on the dark olive section */
-  --dark: hsl(89, 28%, 16%);         /* deep olive — as specified */
-  --dark-card: hsl(89, 24%, 21%);
-  --dark-border: hsl(89, 18%, 33%);
+  --blush: hsl(348, 60%, 86%);       /* nav bar pink */
+  --blush-soft: hsl(348, 55%, 84%);  /* pink accents on the dark purple section */
+  --dark: hsl(269, 28%, 16%);        /* deep purple — hue 269, dark */
+  --dark-card: hsl(269, 24%, 21%);
+  --dark-border: hsl(269, 18%, 36%);
   --rainbow: linear-gradient(90deg,
     oklch(60% 0.19 30),
     oklch(80% 0.15 85),
@@ -67,7 +67,7 @@ h1, h2 {
 }
 .nav-logo { display: block; mix-blend-mode: multiply; height: 90px; width: 190px; object-fit: contain; }
 .nav-links { display: flex; gap: 32px; font-size: 14px; letter-spacing: 0.02em; }
-.nav-links a { text-decoration: none; color: hsl(89, 30%, 24%); }
+.nav-links a { text-decoration: none; color: hsl(269, 30%, 28%); }
 .nav-links a:hover { color: var(--rose); }
 
 /* HERO */
@@ -166,7 +166,7 @@ h1, h2 {
 }
 
 /* CRAFTSMANSHIP */
-.craft { padding: 100px 48px; background: hsl(89, 30%, 92%); }
+.craft { padding: 100px 48px; background: hsl(269, 30%, 93%); }
 .craft-grid {
   max-width: 1200px; margin: 0 auto;
   display: grid; grid-template-columns: 0.85fr 1.15fr;
@@ -233,7 +233,7 @@ h1, h2 {
 }
 .reserve-copy {
   font-size: 17px; line-height: 1.7;
-  color: hsl(89, 20%, 88%);
+  color: hsl(269, 18%, 89%);
   max-width: 560px; margin: 0 auto 56px;
 }
 .reserve-cards {
@@ -246,13 +246,13 @@ h1, h2 {
   border-radius: 16px; padding: 36px;
 }
 .card-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 22px; margin-bottom: 10px; }
-.card-sub { font-size: 14px; line-height: 1.6; color: hsl(89, 15%, 80%); margin: 0 0 22px; }
+.card-sub { font-size: 14px; line-height: 1.6; color: hsl(269, 14%, 81%); margin: 0 0 22px; }
 
 .email-row { display: flex; gap: 10px; }
 .email-row input {
   flex: 1; padding: 14px 16px; border-radius: 10px;
-  border: 1px solid hsl(89, 15%, 36%);
-  background: hsl(89, 24%, 14%);
+  border: 1px solid hsl(269, 15%, 38%);
+  background: hsl(269, 24%, 14%);
   color: oklch(96% 0.01 85);
   font-size: 15px; font-family: 'Work Sans', sans-serif;
   min-width: 0;
@@ -274,7 +274,7 @@ h1, h2 {
 
 .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 22px; }
 .price { font-size: 32px; font-weight: 600; }
-.price-note { font-size: 14px; color: hsl(89, 12%, 78%); }
+.price-note { font-size: 14px; color: hsl(269, 12%, 79%); }
 .btn-reserve {
   width: 100%; background: var(--rose); color: #fff;
   border: none; padding: 16px; border-radius: 10px;
@@ -282,12 +282,12 @@ h1, h2 {
   font-family: 'Work Sans', sans-serif;
 }
 .btn-reserve:hover { background: var(--rose-dark); }
-.fine-print { font-size: 12.5px; line-height: 1.5; color: hsl(89, 10%, 74%); margin: 16px 0 0; }
+.fine-print { font-size: 12.5px; line-height: 1.5; color: hsl(269, 10%, 75%); margin: 16px 0 0; }
 
 .socials { display: flex; gap: 22px; justify-content: center; margin-top: 64px; }
 .socials a {
   width: 40px; height: 40px; border-radius: 999px;
-  border: 1px solid hsl(89, 14%, 40%);
+  border: 1px solid hsl(269, 14%, 44%);
   display: flex; align-items: center; justify-content: center;
   font-size: 12px; letter-spacing: 0.02em;
   text-decoration: none; color: oklch(90% 0.01 85);
@@ -297,8 +297,8 @@ h1, h2 {
 .footer {
   padding: 28px 48px; text-align: center; font-size: 13px;
   background: var(--dark);
-  border-top: 1px solid hsl(89, 16%, 26%);
-  color: hsl(89, 10%, 70%);
+  border-top: 1px solid hsl(269, 16%, 27%);
+  color: hsl(269, 10%, 72%);
 }
 
 /* MODAL */
