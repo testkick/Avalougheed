@@ -13,13 +13,12 @@
   --sunshine: oklch(80% 0.15 85);    /* new: warm yellow accent (dark sections) */
   --border: oklch(85% 0.02 85);
   --cream: oklch(98% 0.01 85);
-  --pink: oklch(91% 0.055 350);        /* nav bar background */
-  --pink-soft: oklch(84% 0.09 350);    /* pink accents on dark teal */
-  --raspberry: oklch(50% 0.17 355);    /* deep pink for links/buttons */
-  --raspberry-dark: oklch(42% 0.17 355);
-  --dark: oklch(26% 0.05 195);         /* deep teal — complementary to the pink */
-  --dark-card: oklch(31% 0.05 195);
-  --dark-border: oklch(42% 0.05 195);
+  --purple: hsl(269, 38%, 53%);        /* nav bar — as specified */
+  --purple-dark: hsl(269, 38%, 43%);
+  --lavender: hsl(269, 45%, 84%);      /* light purple accents on the dark section */
+  --dark: hsl(89, 28%, 16%);           /* deep olive — hue 89 is the complement of 269 */
+  --dark-card: hsl(89, 24%, 21%);
+  --dark-border: hsl(89, 18%, 33%);
   --rainbow: linear-gradient(90deg,
     oklch(60% 0.19 30),
     oklch(80% 0.15 85),
@@ -54,28 +53,28 @@ h1, h2 {
 }
 .eyebrow-green { color: var(--green); }
 .eyebrow-rust  { color: var(--rust); }
-.eyebrow-warm  { color: var(--pink-soft); }
+.eyebrow-warm  { color: var(--lavender); }
 
 /* NAV */
 .nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px 48px;
-  background: oklch(91% 0.055 350 / 0.92);
+  background: hsl(269, 38%, 53%, 0.94);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid oklch(84% 0.07 350);
+  border-bottom: 1px solid hsl(269, 38%, 44%);
 }
 .nav-logo { display: block; mix-blend-mode: multiply; height: 90px; width: 190px; object-fit: contain; }
 .nav-links { display: flex; gap: 32px; font-size: 14px; letter-spacing: 0.02em; }
-.nav-links a { text-decoration: none; color: oklch(36% 0.12 355); }
-.nav-links a:hover { color: var(--raspberry); }
+.nav-links a { text-decoration: none; color: hsl(269, 50%, 93%); }
+.nav-links a:hover { color: #fff; }
 
 /* HERO */
 .hero {
   position: relative; min-height: 92vh;
   display: flex; align-items: center; justify-content: center;
   padding: 80px 48px;
-  background: linear-gradient(180deg, oklch(94% 0.035 350) 0%, oklch(97% 0.012 85) 70%);
+  background: linear-gradient(180deg, hsl(269, 45%, 94%) 0%, oklch(97% 0.012 85) 70%);
 }
 .hero-grid {
   max-width: 1200px; width: 100%;
@@ -206,7 +205,7 @@ h1, h2 {
 }
 .reserve-copy {
   font-size: 17px; line-height: 1.7;
-  color: oklch(88% 0.02 190);
+  color: hsl(89, 20%, 88%);
   max-width: 560px; margin: 0 auto 56px;
 }
 .reserve-cards {
@@ -219,13 +218,13 @@ h1, h2 {
   border-radius: 16px; padding: 36px;
 }
 .card-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 22px; margin-bottom: 10px; }
-.card-sub { font-size: 14px; line-height: 1.6; color: oklch(82% 0.02 190); margin: 0 0 22px; }
+.card-sub { font-size: 14px; line-height: 1.6; color: hsl(89, 15%, 80%); margin: 0 0 22px; }
 
 .email-row { display: flex; gap: 10px; }
 .email-row input {
   flex: 1; padding: 14px 16px; border-radius: 10px;
-  border: 1px solid oklch(44% 0.05 195);
-  background: oklch(24% 0.05 195);
+  border: 1px solid hsl(89, 15%, 36%);
+  background: hsl(89, 24%, 14%);
   color: oklch(96% 0.01 85);
   font-size: 15px; font-family: 'Work Sans', sans-serif;
   min-width: 0;
@@ -247,31 +246,31 @@ h1, h2 {
 
 .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 22px; }
 .price { font-size: 32px; font-weight: 600; }
-.price-note { font-size: 14px; color: oklch(80% 0.02 190); }
+.price-note { font-size: 14px; color: hsl(89, 12%, 78%); }
 .btn-reserve {
-  width: 100%; background: var(--raspberry); color: var(--cream);
+  width: 100%; background: var(--purple); color: #fff;
   border: none; padding: 16px; border-radius: 10px;
   font-weight: 600; font-size: 15px; cursor: pointer;
   font-family: 'Work Sans', sans-serif;
 }
-.btn-reserve:hover { background: var(--raspberry-dark); }
-.fine-print { font-size: 12.5px; line-height: 1.5; color: oklch(76% 0.02 190); margin: 16px 0 0; }
+.btn-reserve:hover { background: var(--purple-dark); }
+.fine-print { font-size: 12.5px; line-height: 1.5; color: hsl(89, 10%, 74%); margin: 16px 0 0; }
 
 .socials { display: flex; gap: 22px; justify-content: center; margin-top: 64px; }
 .socials a {
   width: 40px; height: 40px; border-radius: 999px;
-  border: 1px solid oklch(48% 0.05 195);
+  border: 1px solid hsl(89, 14%, 40%);
   display: flex; align-items: center; justify-content: center;
   font-size: 12px; letter-spacing: 0.02em;
   text-decoration: none; color: oklch(90% 0.01 85);
 }
-.socials a:hover { border-color: var(--pink-soft); color: var(--pink-soft); }
+.socials a:hover { border-color: var(--lavender); color: var(--lavender); }
 
 .footer {
   padding: 28px 48px; text-align: center; font-size: 13px;
   background: var(--dark);
-  border-top: 1px solid oklch(34% 0.05 195);
-  color: oklch(74% 0.02 190);
+  border-top: 1px solid hsl(89, 16%, 26%);
+  color: hsl(89, 10%, 70%);
 }
 
 /* MODAL */
@@ -302,7 +301,7 @@ h1, h2 {
   font-size: 15px; font-family: 'Work Sans', sans-serif;
 }
 .btn-pay {
-  margin-top: 8px; background: var(--raspberry); color: var(--cream);
+  margin-top: 8px; background: var(--purple); color: #fff;
   border: none; padding: 16px; border-radius: 10px;
   font-weight: 600; font-size: 15px; cursor: pointer;
   font-family: 'Work Sans', sans-serif;
