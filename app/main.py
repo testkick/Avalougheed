@@ -105,7 +105,7 @@ def create_checkout_session(body: CheckoutBody):
                 "unit_amount": DEPOSIT_AMOUNT_CENTS,
                 "product_data": {
                     "name": "Ava Lougheed — presale deposit",
-                    "description": "Fully refundable $25 deposit, applied to your $75 at launch.",
+                    "description": "Fully refundable $25 deposit, applied to full price at launch.",
                 },
             },
             "quantity": 1,
@@ -113,7 +113,6 @@ def create_checkout_session(body: CheckoutBody):
         success_url=f"{BASE_URL}/?reserved=1&session_id={{CHECKOUT_SESSION_ID}}#reserve",
         cancel_url=f"{BASE_URL}/?canceled=1#reserve",
         metadata={"customer_name": body.name.strip()[:200]},
-        consent_collection={"promotions": "auto"},
     )
     if EMAIL_RE.match(email):
         params["customer_email"] = email
