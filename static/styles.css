@@ -44,6 +44,9 @@ h1, h2 {
   font-weight: 500;
   font-style: italic;
 }
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.back{font-size:14px;color:#7a4a2e;text-decoration:none;white-space:nowrap;}
+.back:hover{text-decoration:underline;}
 
 .eyebrow {
   font-size: 13px;
