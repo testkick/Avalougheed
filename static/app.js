@@ -118,7 +118,7 @@
           const who = s.name ? `, ${s.name}` : '';
           const where = s.email ? ` We'll email ${s.email}` : ` We'll email you`;
           $('#deposit-success-copy').textContent =
-            `Thank you${who} — your $25 deposit is confirmed.${where} this fall when it's time to complete your order.`;
+            `Thank you${who} — your $25 deposit is confirmed.${where} when it's time to complete your order.`;
           openModal(true);
         }
       })
