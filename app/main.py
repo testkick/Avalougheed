@@ -247,7 +247,10 @@ def admin(_: str = Depends(require_admin)):
   th{{background:#f6f2ea;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#8a8175;}}
   tr:last-child td{{border-bottom:none;}} .empty{{color:#b0a89a;text-align:center;padding:24px;}}
 </style></head><body><div class="wrap">
-<h1>Ava Lougheed Shoes — Presale</h1>
+<div class="topbar">
+  <h1>Ava Lougheed Shoes — Presale</h1>
+  <a class="back" href="/">← Back to site</a>
+</div>
 <p class="sub">Live counts from the production database.</p>
 <div class="cards">
   <div class="card"><div class="n">{len(subs)}</div><div class="l">Emails on the list</div></div>
