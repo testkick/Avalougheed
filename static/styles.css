@@ -326,11 +326,23 @@ h1, h2 {
 .modal-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 24px; margin-bottom: 6px; }
 .modal-sub { font-size: 14px; color: oklch(40% 0.02 85); margin: 0 0 24px; }
 .modal-fields { display: flex; flex-direction: column; gap: 14px; }
-.modal-fields input {
+.modal-fields input,
+.modal-fields .modal-select {
   padding: 14px 16px; border-radius: 10px;
   border: 1px solid oklch(80% 0.02 85);
   font-size: 15px; font-family: 'Work Sans', sans-serif;
+  background: white;
+  color: var(--ink);
 }
+.modal-fields .modal-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.modal-fields .modal-select:invalid { color: oklch(55% 0.02 85); }
 .btn-pay {
   margin-top: 8px; background: var(--rose); color: #fff;
   border: none; padding: 16px; border-radius: 10px;

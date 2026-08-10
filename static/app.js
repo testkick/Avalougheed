@@ -52,6 +52,7 @@
   const successView = $('#deposit-success-view');
   const nameInput = $('#deposit-name');
   const depEmailInput = $('#deposit-email');
+  const sizeSelect = $('#deposit-size');
   const payBtn = $('#pay-button');
   const depError = $('#deposit-error');
 
@@ -79,10 +80,15 @@
   });
 
   function updatePayButton() {
-    payBtn.disabled = !(nameInput.value.trim() && emailRe.test(depEmailInput.value.trim()));
+    payBtn.disabled = !(
+      nameInput.value.trim() &&
+      emailRe.test(depEmailInput.value.trim()) &&
+      sizeSelect.value
+    );
   }
   nameInput.addEventListener('input', updatePayButton);
   depEmailInput.addEventListener('input', updatePayButton);
+  sizeSelect.addEventListener('change', updatePayButton);
 
   payBtn.addEventListener('click', async () => {
     depError.hidden = true;
@@ -95,6 +101,7 @@
         body: JSON.stringify({
           name: nameInput.value.trim(),
           email: depEmailInput.value.trim(),
+          shoe_size: sizeSelect.value,
         }),
       });
       const data = await res.json();
