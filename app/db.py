@@ -37,6 +37,7 @@ reservations = Table(
     Column("id", Integer, primary_key=True),
     Column("name", String(200)),
     Column("email", String(320), nullable=False),
+    Column("shoe_size", String(10)),
     Column("amount_cents", Integer, nullable=False, default=2500),
     Column("currency", String(10), nullable=False, default="usd"),
     Column("stripe_session_id", String(255), unique=True),

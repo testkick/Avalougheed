@@ -90,6 +90,7 @@ def subscribe(body: SubscribeBody):
 class CheckoutBody(BaseModel):
     name: str = ""
     email: str = ""
+    shoe_size: str = ""
 
 
 @app.post("/api/create-checkout-session")
@@ -112,7 +113,10 @@ def create_checkout_session(body: CheckoutBody):
         }],
         success_url=f"{BASE_URL}/?reserved=1&session_id={{CHECKOUT_SESSION_ID}}#reserve",
         cancel_url=f"{BASE_URL}/?canceled=1#reserve",
-        metadata={"customer_name": body.name.strip()[:200]},
+        metadata={
+            "customer_name": body.name.strip()[:200],
+            "shoe_size": body.shoe_size.strip()[:10],
+        },
     )
     if EMAIL_RE.match(email):
         params["customer_email"] = email
@@ -138,11 +142,13 @@ async def stripe_webhook(request: Request):
         email = (s.get("customer_details") or {}).get("email") or s.get("customer_email") or ""
         name = (s.get("metadata") or {}).get("customer_name") or \
                (s.get("customer_details") or {}).get("name") or ""
+        shoe_size = (s.get("metadata") or {}).get("shoe_size") or ""
         try:
             with engine.begin() as conn:
                 conn.execute(insert(reservations).values(
                     name=name,
                     email=email.lower(),
+                    shoe_size=shoe_size,
                     amount_cents=s.get("amount_total") or DEPOSIT_AMOUNT_CENTS,
                     currency=s.get("currency") or "usd",
                     stripe_session_id=s.get("id"),
@@ -226,9 +232,10 @@ def admin(_: str = Depends(require_admin)):
 
     res_rows = "".join(
         f"<tr><td>{esc(r['name'])}</td><td>{esc(r['email'])}</td>"
+        f"<td>{esc(r['shoe_size'])}</td>"
         f"<td>${r['amount_cents']/100:.2f}</td><td>{esc(r['status'])}</td>"
         f"<td>{r['created_at']:%Y-%m-%d %H:%M}</td></tr>" for r in res
-    ) or "<tr><td colspan=5 class=empty>No reservations yet</td></tr>"
+    ) or "<tr><td colspan=6 class=empty>No reservations yet</td></tr>"
 
     return f"""<!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -261,7 +268,7 @@ def admin(_: str = Depends(require_admin)):
 <h2>Email list <a href="/admin/subscribers.csv">Download CSV</a></h2>
 <table><tr><th>Email</th><th>Source</th><th>Signed up (UTC)</th></tr>{sub_rows}</table>
 <h2>Reservations <a href="/admin/reservations.csv">Download CSV</a></h2>
-<table><tr><th>Name</th><th>Email</th><th>Amount</th><th>Status</th><th>Paid (UTC)</th></tr>{res_rows}</table>
+<table><tr><th>Name</th><th>Email</th><th>Size</th><th>Amount</th><th>Status</th><th>Paid (UTC)</th></tr>{res_rows}</table>
 </div></body></html>"""
 
 
@@ -295,8 +302,8 @@ def reservations_csv(_: str = Depends(require_admin)):
     rows = _rows(reservations, reservations.c.created_at)
     return _csv_response(
         "reservations.csv",
-        ["Name", "Email Address", "Amount USD", "Status", "Stripe Session", "Paid At (UTC)"],
-        ([r["name"], r["email"], f"{r['amount_cents']/100:.2f}", r["status"],
+        ["Name", "Email Address", "Shoe Size", "Amount USD", "Status", "Stripe Session", "Paid At (UTC)"],
+        ([r["name"], r["email"], r["shoe_size"], f"{r['amount_cents']/100:.2f}", r["status"],
           r["stripe_session_id"], r["created_at"].isoformat()] for r in rows),
     )
 
