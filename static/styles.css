@@ -364,6 +364,63 @@ h1, h2 {
   50% { opacity: .55; }
 }
 
+/* FOOTER LAYOUT — brand line + policy links */
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.footer-links { display: flex; gap: 22px; }
+.footer-links a {
+  color: hsl(269, 10%, 82%); text-decoration: none;
+  font-size: 13px; letter-spacing: 0.02em;
+}
+.footer-links a:hover { color: var(--blush-soft); }
+
+/* LEGAL PAGES — privacy, terms */
+.nav-logo-link { display: block; line-height: 0; }
+.legal {
+  max-width: 720px; margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.legal .eyebrow { margin-bottom: 14px; }
+.legal h1 {
+  font-size: clamp(36px, 4.5vw, 52px);
+  line-height: 1.1; margin: 0 0 8px;
+}
+.legal .effective {
+  color: var(--ink-soft); font-size: 14px;
+  margin: 0 0 40px; letter-spacing: 0.02em;
+}
+.legal h2 {
+  font-size: clamp(22px, 2.8vw, 28px);
+  margin: 44px 0 12px; line-height: 1.25;
+}
+.legal p, .legal li {
+  font-size: 16px; line-height: 1.75;
+  color: var(--ink-soft);
+}
+.legal p { margin: 0 0 14px; }
+.legal ul { padding-left: 22px; margin: 0 0 16px; }
+.legal li { margin-bottom: 8px; }
+.legal strong { color: var(--ink); font-weight: 600; }
+.legal em { font-style: italic; }
+.legal a { color: var(--rose); }
+.legal a:hover { color: var(--rose-dark); }
+.legal hr {
+  border: none; height: 1px;
+  background: var(--border);
+  margin: 44px 0 24px;
+}
+.legal .address {
+  font-style: normal; line-height: 1.7;
+  padding: 14px 18px; border-left: 3px solid var(--rose);
+  background: hsl(348, 55%, 97%); border-radius: 0 6px 6px 0;
+}
+.legal .return {
+  font-size: 14px; color: var(--ink-soft);
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav { padding: 14px 20px; }
@@ -376,6 +433,8 @@ h1, h2 {
   .craft, .designer { padding: 80px 20px; }
   .reserve { padding: 80px 20px; }
   .reserve-cards { grid-template-columns: 1fr; }
+  .legal { padding: 56px 20px 72px; }
+  .footer-inner { flex-direction: column; text-align: center; gap: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
