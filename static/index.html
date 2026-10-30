@@ -14,10 +14,10 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <img src="/assets/logo.png" alt="Ava Lougheed" class="nav-logo">
+  <a href="/" class="nav-logo-link"><img src="/assets/logo.png" alt="Ava Lougheed" class="nav-logo"></a>
   <div class="nav-links">
     <a href="#story">Story</a>
-    <a href="#designer">Designer</a>
+    <a href="/designer.html">Designer</a>
     <a href="#reserve">Reserve</a>
   </div>
 </nav>
@@ -95,6 +95,7 @@
       <p>Now I walk down a street noticing the curve of a building, the colours in a flower market, or the way the afternoon light hits a cobblestone alley, and it inspires me. That's how I design. Not by following trends, but by soaking the moments.</p>
       <p>This first shoe carries a little bit of Milan, a little bit of Vancouver, and a whole lot of the adventures that happened in between. I hope it becomes part of yours.</p>
       <p>For the Fearlessly Fabulous.</p>
+      <p class="designer-more"><a href="/designer.html">Read Ava's full story and what's coming next →</a></p>
     </div>
   </div>
 </section>
@@ -104,7 +105,7 @@
   <div class="reserve-inner">
     <div class="eyebrow eyebrow-warm">Presale</div>
     <h2>Be among the first to wear it.</h2>
-    <p class="reserve-copy">We envision the retail price will be about $150 USD. Reserve now with a fully refundable $25 deposit and guarantee a pair or just join the list to hear when it launches.</p>
+    <p class="reserve-copy">We envision the retail price will be about $75 USD. Reserve now with a fully refundable $25 deposit and guarantee a pair or just join the list to hear when it launches.</p>
 
     <div class="reserve-cards" id="email-anchor">
 
@@ -125,7 +126,7 @@
         <div class="card-title">Reserve early access</div>
         <div class="price-row">
           <span class="price">$25</span>
-          <span class="price-note">refundable deposit · Approx $150 retail</span>
+          <span class="price-note">refundable deposit · Approx $75 retail</span>
         </div>
         <button class="btn-reserve" data-open-deposit>Reserve yours — $25 USD</button>
         <p class="fine-print">Fully refundable any time before shipping. Charged now, applied to the final price at launch.</p>
@@ -142,16 +143,7 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div>© 2026 Ava Lougheed Shoes. Conceived in Milan. Built in Vancouver.</div>
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a href="mailto:privacy@avalougheed.com">Contact</a>
-    </div>
-  </div>
-</footer>
+<footer class="footer">© 2026 Ava Lougheed Shoes. Conceived in Milan. Built in Vancouver.</footer>
 
 <!-- DEPOSIT MODAL -->
 <div class="modal-overlay" id="deposit-modal" hidden>
@@ -164,16 +156,6 @@
       <div class="modal-fields">
         <input id="deposit-name" placeholder="Full name" autocomplete="name">
         <input id="deposit-email" placeholder="Email" type="email" autocomplete="email">
-        <select id="deposit-size" class="modal-select" required>
-          <option value="" disabled selected>Shoe size (US women's)</option>
-          <option>5</option>   <option>5.5</option>
-          <option>6</option>   <option>6.5</option>
-          <option>7</option>   <option>7.5</option>
-          <option>8</option>   <option>8.5</option>
-          <option>9</option>   <option>9.5</option>
-          <option>10</option>  <option>10.5</option>
-          <option>11</option>
-        </select>
         <button id="pay-button" class="btn-pay" disabled>Continue to secure payment</button>
         <p class="modal-fine">You'll enter card details on Stripe's secure checkout page.</p>
       </div>

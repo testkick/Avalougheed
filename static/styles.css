@@ -326,23 +326,11 @@ h1, h2 {
 .modal-title { font-family: 'EB Garamond', serif; font-style: italic; font-size: 24px; margin-bottom: 6px; }
 .modal-sub { font-size: 14px; color: oklch(40% 0.02 85); margin: 0 0 24px; }
 .modal-fields { display: flex; flex-direction: column; gap: 14px; }
-.modal-fields input,
-.modal-fields .modal-select {
+.modal-fields input {
   padding: 14px 16px; border-radius: 10px;
   border: 1px solid oklch(80% 0.02 85);
   font-size: 15px; font-family: 'Work Sans', sans-serif;
-  background: white;
-  color: var(--ink);
 }
-.modal-fields .modal-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-.modal-fields .modal-select:invalid { color: oklch(55% 0.02 85); }
 .btn-pay {
   margin-top: 8px; background: var(--rose); color: #fff;
   border: none; padding: 16px; border-radius: 10px;
@@ -364,63 +352,6 @@ h1, h2 {
   50% { opacity: .55; }
 }
 
-/* FOOTER LAYOUT — brand line + policy links */
-.footer-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 20px; flex-wrap: wrap;
-}
-.footer-links { display: flex; gap: 22px; }
-.footer-links a {
-  color: hsl(269, 10%, 82%); text-decoration: none;
-  font-size: 13px; letter-spacing: 0.02em;
-}
-.footer-links a:hover { color: var(--blush-soft); }
-
-/* LEGAL PAGES — privacy, terms */
-.nav-logo-link { display: block; line-height: 0; }
-.legal {
-  max-width: 720px; margin: 0 auto;
-  padding: 72px 32px 96px;
-}
-.legal .eyebrow { margin-bottom: 14px; }
-.legal h1 {
-  font-size: clamp(36px, 4.5vw, 52px);
-  line-height: 1.1; margin: 0 0 8px;
-}
-.legal .effective {
-  color: var(--ink-soft); font-size: 14px;
-  margin: 0 0 40px; letter-spacing: 0.02em;
-}
-.legal h2 {
-  font-size: clamp(22px, 2.8vw, 28px);
-  margin: 44px 0 12px; line-height: 1.25;
-}
-.legal p, .legal li {
-  font-size: 16px; line-height: 1.75;
-  color: var(--ink-soft);
-}
-.legal p { margin: 0 0 14px; }
-.legal ul { padding-left: 22px; margin: 0 0 16px; }
-.legal li { margin-bottom: 8px; }
-.legal strong { color: var(--ink); font-weight: 600; }
-.legal em { font-style: italic; }
-.legal a { color: var(--rose); }
-.legal a:hover { color: var(--rose-dark); }
-.legal hr {
-  border: none; height: 1px;
-  background: var(--border);
-  margin: 44px 0 24px;
-}
-.legal .address {
-  font-style: normal; line-height: 1.7;
-  padding: 14px 18px; border-left: 3px solid var(--rose);
-  background: hsl(348, 55%, 97%); border-radius: 0 6px 6px 0;
-}
-.legal .return {
-  font-size: 14px; color: var(--ink-soft);
-}
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav { padding: 14px 20px; }
@@ -433,10 +364,184 @@ h1, h2 {
   .craft, .designer { padding: 80px 20px; }
   .reserve { padding: 80px 20px; }
   .reserve-cards { grid-template-columns: 1fr; }
-  .legal { padding: 56px 20px 72px; }
-  .footer-inner { flex-direction: column; text-align: center; gap: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+/* ========================================================================
+   DEDICATED DESIGNER PAGE — /designer.html
+   ======================================================================== */
+
+.nav-logo-link { display: block; line-height: 0; }
+
+.designer-more {
+  margin-top: 28px !important;
+  font-size: 15px;
+}
+.designer-more a {
+  color: var(--rose); text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.designer-more a:hover { color: var(--rose-dark); }
+
+/* nav current-page indicator */
+.nav-links a[aria-current="page"] {
+  color: var(--rose);
+  position: relative;
+}
+.nav-links a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px; border-radius: 999px;
+  background: var(--rainbow);
+}
+
+/* -- hero ---------------------------------------------------------------- */
+.dp-hero {
+  padding: 80px 48px 100px;
+  background: linear-gradient(180deg, var(--blush) 0%, var(--cream) 100%);
+}
+.dp-hero-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.dp-hero-copy .eyebrow { margin-bottom: 20px; }
+.dp-name {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1; margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.dp-title {
+  font-size: 14px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft);
+  font-weight: 500; margin-bottom: 32px;
+}
+.dp-lede {
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4;
+  color: var(--ink); margin: 0 0 28px; max-width: 520px;
+}
+.dp-rainbow {
+  width: 120px; height: 3px; border-radius: 999px;
+  background: var(--rainbow);
+}
+.dp-hero-photo {
+  aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 30px 60px -20px hsl(269, 28%, 20% / 0.35);
+}
+.dp-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* -- sections ------------------------------------------------------------ */
+.dp-section {
+  padding: 100px 48px;
+}
+.dp-section-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.dp-narrow {
+  max-width: 720px;
+}
+.dp-section h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.18; margin: 0 0 24px;
+}
+.dp-section p {
+  font-size: 17px; line-height: 1.75;
+  color: var(--ink-soft); margin: 0 0 18px;
+}
+.dp-section-tint {
+  background: hsl(348, 55%, 97%);
+}
+.dp-section-dark {
+  background: var(--dark);
+  color: var(--cream);
+}
+.dp-section-dark h2 { color: var(--cream); }
+.dp-section-dark p { color: hsl(348, 20%, 82%); }
+
+/* -- method grid: tenets --------------------------------------------------- */
+.dp-method-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px; align-items: start;
+}
+.dp-tenets {
+  list-style: none; padding: 0; margin: 8px 0 0;
+  display: grid; gap: 20px;
+}
+.dp-tenets li {
+  display: flex; gap: 18px;
+  padding: 20px 22px; border-radius: 14px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+.dp-tenets li div {
+  font-size: 15px; line-height: 1.6; color: var(--ink-soft);
+}
+.dp-tenets strong { color: var(--ink); font-weight: 600; }
+.dp-tenet-num {
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 22px; color: var(--rose);
+  flex-shrink: 0; min-width: 32px;
+}
+
+/* -- timeline / what's next ------------------------------------------------ */
+.dp-next-h { margin-bottom: 48px; }
+.dp-timeline {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px; margin-bottom: 40px;
+}
+.dp-step {
+  padding: 24px 20px; border-radius: 14px;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+}
+.dp-step-when {
+  font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--blush-soft); margin-bottom: 12px;
+}
+.dp-step-what {
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 22px; color: var(--cream); margin-bottom: 10px;
+}
+.dp-step-copy {
+  font-size: 14px; line-height: 1.6; color: hsl(348, 15%, 78%);
+}
+.dp-next-foot {
+  font-style: italic; font-size: 15px;
+  color: hsl(348, 15%, 72%); margin-top: 32px;
+}
+
+/* -- closing ------------------------------------------------------------- */
+.dp-close {
+  padding: 100px 48px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 100%);
+}
+.dp-close-inner { margin: 0 auto; }
+.dp-cta-row {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin: 36px 0 24px;
+}
+.dp-cta-row .btn { text-decoration: none; display: inline-block; }
+.dp-signature {
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 20px; color: var(--rose);
+  margin: 24px 0 0 !important;
+}
+
+/* -- designer page responsive --------------------------------------------- */
+@media (max-width: 900px) {
+  .dp-hero { padding: 56px 20px 72px; }
+  .dp-hero-grid, .dp-method-grid { grid-template-columns: 1fr; gap: 40px; }
+  .dp-hero-photo { max-width: 420px; margin: 0 auto; }
+  .dp-section { padding: 72px 20px; }
+  .dp-close { padding: 72px 20px; }
+  .dp-timeline { grid-template-columns: 1fr; }
 }
